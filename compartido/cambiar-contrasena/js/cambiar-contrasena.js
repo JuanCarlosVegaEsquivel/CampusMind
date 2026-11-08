@@ -112,6 +112,12 @@ formContrasena.addEventListener("submit", (event) => {
 formContrasena.addEventListener("reset", () => {
   limpiarErrores(formContrasena);
   mostrarMensaje("#mensajeContrasena", "", "");
+
+  document.querySelectorAll(".btn-mostrar").forEach((boton) => {
+    document.querySelector(`#${boton.dataset.campo}`).type = "password";
+    boton.innerText = "Mostrar";
+  });
+
   setTimeout(revisarRequisitos);
 });
 

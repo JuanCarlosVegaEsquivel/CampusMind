@@ -104,7 +104,7 @@
 .bloque.reprogramar {
   border: 1px dashed var(--peligro);
   background: var(--peligro-suave);
-  color: var(--peligro);
+  color: var(--peligro-texto);
 }
 
 .bloque.en-curso {

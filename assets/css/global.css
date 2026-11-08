@@ -209,7 +209,7 @@ textarea:focus-visible {
   box-shadow: 0 10px 30px -10px rgba(30, 42, 33, 0.3);
 }
 
-.panel-crisis h3 {
+.panel-crisis h2 {
   margin-bottom: 8px;
   font-size: 17px;
   color: var(--peligro);
@@ -570,7 +570,7 @@ tbody tr:hover td {
 }
 
 .estado.desactivada {
-  color: #9a8d82;
+  color: #766c64;
 }
 
 .estado-vacio {

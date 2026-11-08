@@ -49,18 +49,22 @@ const solicitudes = [
     nombre: "D.F.R.",
     fecha: "mié 11 · 14:00",
     motivo: "Primera cita · ansiedad por parciales",
+    cita: { dia: 2, hora: 14 },
     aceptada: false,
   },
   {
     nombre: "Nube",
     fecha: "jue 12 · 9:00",
     motivo: "Organización del tiempo",
+    cita: { dia: 3, hora: 9 },
     aceptada: false,
   },
   {
     nombre: "L.A.M.",
     fecha: "vie 13 · 10:30",
     motivo: "Reprogramar la cita del miércoles",
+    cita: { dia: 4, hora: 10.5 },
+    reemplaza: { dia: 2, hora: 10 },
     aceptada: false,
   },
 ];
@@ -68,6 +72,10 @@ const solicitudes = [
 const formatearHora = (hora) => {
   const minutos = hora % 1 === 0 ? "00" : "30";
   return `${Math.floor(hora)}:${minutos}`;
+};
+
+const buscarCita = (posicion) => {
+  return citasSemana.find((cita) => cita.dia === posicion.dia && cita.hora === posicion.hora);
 };
 
 // ==================== CALENDARIO DE LA SEMANA ====================
@@ -161,7 +169,18 @@ document.querySelector("#listaSolicitudes").addEventListener("click", (event) =>
     return;
   }
 
-  solicitudes[boton.dataset.indice].aceptada = true;
+  const solicitud = solicitudes[boton.dataset.indice];
+  solicitud.aceptada = true;
+
+  const cita = buscarCita(solicitud.cita);
+  cita.estado = "confirmada";
+
+  if (solicitud.reemplaza) {
+    const citaAnterior = buscarCita(solicitud.reemplaza);
+    citasSemana.splice(citasSemana.indexOf(citaAnterior), 1);
+  }
+
+  dibujarAgenda();
   mostrarSolicitudes();
 });
 

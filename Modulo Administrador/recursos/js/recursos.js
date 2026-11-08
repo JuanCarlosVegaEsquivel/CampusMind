@@ -64,7 +64,7 @@ const recursos = [
   },
 ];
 
-const totalRecursos = 42;
+let totalRecursos = 42;
 const filtroRecursos = { grupo: "todas" };
 
 // ==================== LISTADO DE RECURSOS ====================
@@ -141,6 +141,7 @@ formRecurso.addEventListener("submit", (event) => {
 
   const publicado = object.publicar === "on";
 
+  totalRecursos++;
   recursos.unshift({
     titulo: titulo,
     descripcion: object.descripcion.trim(),

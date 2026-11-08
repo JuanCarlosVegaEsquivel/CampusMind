@@ -43,8 +43,11 @@ const mostrarSolicitudes = () => {
 
   const pendientes = solicitudes.filter((solicitud) => !solicitud.aceptada).length;
 
-  document.querySelector(".contador-solicitudes").innerText =
-    pendientes === 1 ? "1 solicitud" : `${pendientes} solicitudes`;
+  const texto = pendientes === 1 ? "1 solicitud" : `${pendientes} solicitudes`;
+
+  document.querySelectorAll(".contador-solicitudes").forEach((contador) => {
+    contador.innerText = texto;
+  });
 
   const contadorMenu = document.querySelector(".contador-menu");
   contadorMenu.innerText = pendientes;

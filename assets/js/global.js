@@ -38,9 +38,15 @@ const guardarHistorial = (historial) => {
 
 const mostrarBotonVolver = () => {
   const historial = leerHistorial();
+
+  while (historial.length > 0 && historial[historial.length - 1].url === location.href) {
+    historial.pop();
+  }
+  guardarHistorial(historial);
+
   const anterior = historial[historial.length - 1];
 
-  if (anterior && anterior.url !== location.href) {
+  if (anterior) {
     btnVolver.innerText = `← Volver a ${anterior.nombre}`;
     btnVolver.classList.remove("d-none");
   }
@@ -100,9 +106,15 @@ const configurarFiltros = (idFiltros, alCambiar) => {
   const botones = document.querySelectorAll(`${idFiltros} .btn-filtro`);
 
   botones.forEach((boton) => {
+    boton.setAttribute("aria-pressed", boton.classList.contains("activo"));
+
     boton.addEventListener("click", () => {
-      botones.forEach((otro) => otro.classList.remove("activo"));
+      botones.forEach((otro) => {
+        otro.classList.remove("activo");
+        otro.setAttribute("aria-pressed", "false");
+      });
       boton.classList.add("activo");
+      boton.setAttribute("aria-pressed", "true");
       alCambiar(boton.dataset.filtro);
     });
   });
