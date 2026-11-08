@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Usuarios - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/usuarios.css" />
+  </head>
+  <body data-pagina="Usuarios">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">administración</span>
+      </div>
+
+      <nav class="menu" aria-label="Módulo administrador">
+        <a href="../estadisticas/estadisticas.html" class="menu-item">
+          Resumen y estadísticas
+        </a>
+        <a
+          href="../usuarios/usuarios.html"
+          class="menu-item activo"
+          aria-current="page"
+        >
+          Usuarios
+        </a>
+        <a href="../profesionales/profesionales.html" class="menu-item">
+          Profesionales
+        </a>
+        <a href="../recursos/recursos.html" class="menu-item">
+          Recursos de autocuidado
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a
+          href="../../compartido/cambiar-contrasena/cambiar-contrasena.html?rol=admin"
+          class="menu-item"
+        >
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        class="buscar"
+        placeholder="Buscar en la plataforma"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span class="inicial">C</span>
+        <span>
+          <span class="persona-nombre">Carolina Jiménez</span>
+          <br />
+          <span class="persona-rol">Administradora</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>Si alguien está en riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <section class="titulo-pagina">
+        <div class="saludo">
+          <p class="fecha">Lunes 9 de noviembre</p>
+          <h1>Personas en la plataforma</h1>
+          <p class="resumen">
+            Hay <strong>412 estudiantes</strong>,
+            <strong>11 profesionales</strong> y
+            <strong>2 administradores</strong> con la cuenta activa.
+          </p>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn btn-primario sin-datos">
+            Agregar usuario
+          </button>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: ACTIVIDAD DE LA SEMANA -->
+      <article class="panel margen-abajo">
+        <div class="panel-titulo"><h2>Esta semana</h2></div>
+        <ul class="actividad">
+          <li>
+            14 estudiantes nuevos se registraron
+            <span class="td-sub">5 eligieron usar seudónimo</span>
+          </li>
+          <li>
+            Se desactivó la cuenta de José Pablo Herrera
+            <span class="td-sub">A solicitud del estudiante</span>
+          </li>
+          <li>
+            Se agregaron 3 recursos de autocuidado
+            <span class="td-sub">Por Carolina Jiménez</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- SECCIÓN: LISTADO DE USUARIOS -->
+      <article class="panel">
+        <div class="encabezado-seccion">
+          <div id="filtrosUsuarios" class="filtros">
+            <button type="button" class="btn-filtro activo" data-filtro="todas">
+              Todas
+            </button>
+            <button type="button" class="btn-filtro" data-filtro="estudiante">
+              Estudiantes
+            </button>
+            <button type="button" class="btn-filtro" data-filtro="profesional">
+              Profesionales
+            </button>
+            <button type="button" class="btn-filtro" data-filtro="administrador">
+              Administradores
+            </button>
+          </div>
+          <input
+            type="search"
+            id="buscarUsuario"
+            class="buscar"
+            placeholder="Nombre, correo o carné"
+            aria-label="Buscar usuarios"
+          />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Persona</th>
+              <th scope="col">Carné o colegiado</th>
+              <th scope="col">Rol</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Último ingreso</th>
+              <th scope="col" class="celda-acciones"></th>
+            </tr>
+          </thead>
+          <tbody id="usuariosBody"></tbody>
+        </table>
+        <p id="usuariosVacio" class="estado-vacio d-none">
+          Ninguna persona coincide con la búsqueda.
+        </p>
+
+        <div class="pie-tabla">
+          <span id="usuariosConteo"></span>
+          <div class="paginas">
+            <button type="button" class="pagina actual">1</button>
+            <button type="button" class="pagina sin-datos">2</button>
+            <button type="button" class="pagina sin-datos">3</button>
+            <span>…</span>
+            <button type="button" class="pagina sin-datos">54</button>
+            <button type="button" class="btn-texto sin-datos">Siguiente →</button>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/usuarios.js" defer></script>
+  </body>
+</html>

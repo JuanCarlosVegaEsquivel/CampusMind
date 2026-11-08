@@ -1,0 +1,24 @@
+/* ==================== ADMINISTRADOR: USUARIOS ==================== */
+
+.actividad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.actividad li {
+  padding: 0 20px;
+  border-left: 1px solid var(--borde-suave);
+  font-size: 14px;
+}
+
+.actividad li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.actividad .td-sub {
+  display: block;
+}

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Estudiantes en seguimiento - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/seguimiento.css" />
+  </head>
+  <body data-pagina="Estudiantes en seguimiento">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">espacio profesional</span>
+      </div>
+
+      <nav class="menu" aria-label="Módulo profesional">
+        <a href="../jornada/jornada.html" class="menu-item">Mi jornada</a>
+        <a href="../agenda/agenda.html" class="menu-item">
+          Agenda de citas <span class="contador">3</span>
+        </a>
+        <a
+          href="../seguimiento/seguimiento.html"
+          class="menu-item activo"
+          aria-current="page"
+        >
+          Estudiantes en seguimiento
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a
+          href="../../compartido/cambiar-contrasena/cambiar-contrasena.html"
+          class="menu-item"
+        >
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        class="buscar"
+        placeholder="Buscar estudiante o cita"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span class="inicial">V</span>
+        <span>
+          <span class="persona-nombre">Valeria Solano</span>
+          <br />
+          <span class="persona-rol">Psicóloga</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>Si alguien está en riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <section class="titulo-pagina">
+        <div class="saludo">
+          <p class="fecha">Lunes 9 de noviembre</p>
+          <h1>Estudiantes en seguimiento</h1>
+          <p class="resumen">
+            Acompaña a <strong>12 estudiantes</strong>. <strong>2</strong>
+            necesitan atención y <strong>1</strong> no tiene próxima cita.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: LISTADO DE ESTUDIANTES -->
+      <article class="panel">
+        <div class="encabezado-seccion">
+          <div id="filtrosEstudiantes" class="filtros">
+            <button type="button" class="btn-filtro activo" data-filtro="todas">
+              Todos
+            </button>
+            <button type="button" class="btn-filtro" data-filtro="atencion">
+              Necesitan atención
+            </button>
+            <button type="button" class="btn-filtro" data-filtro="sin-cita">
+              Sin próxima cita
+            </button>
+          </div>
+          <input
+            type="search"
+            id="buscarEstudiante"
+            class="buscar"
+            placeholder="Seudónimo o iniciales"
+            aria-label="Buscar estudiante"
+          />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Estudiante</th>
+              <th scope="col">Sesiones</th>
+              <th scope="col">Próxima cita</th>
+              <th scope="col">Ánimo (7 días)</th>
+              <th scope="col">Le comparte</th>
+              <th scope="col">Estado</th>
+              <th scope="col" class="celda-acciones"></th>
+            </tr>
+          </thead>
+          <tbody id="estudiantesBody"></tbody>
+        </table>
+        <p id="estudiantesVacio" class="estado-vacio d-none">
+          Ningún estudiante coincide con la búsqueda.
+        </p>
+
+        <div class="pie-tabla">
+          <span id="estudiantesConteo"></span>
+          <div class="paginas">
+            <button type="button" class="pagina actual">1</button>
+            <button type="button" class="pagina sin-datos">2</button>
+          </div>
+        </div>
+        <p class="privado">
+          Solo aparecen los datos que cada estudiante decidió compartir. Puede
+          retirar el permiso en cualquier momento.
+        </p>
+      </article>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/seguimiento.js" defer></script>
+  </body>
+</html>

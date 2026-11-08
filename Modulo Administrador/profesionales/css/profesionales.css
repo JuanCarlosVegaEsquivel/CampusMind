@@ -1,0 +1,11 @@
+/* ==================== ADMINISTRADOR: PROFESIONALES ==================== */
+
+.carga {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carga .pista {
+  width: 90px;
+}

@@ -1,0 +1,30 @@
+/* ==================== ADMINISTRADOR: RESUMEN Y ESTADÍSTICAS ==================== */
+
+.columnas.mitades {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ranking-cabeza {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.ranking-cabeza strong {
+  font-weight: 600;
+}
+
+.ranking-cabeza span {
+  font-size: 13px;
+  color: var(--texto-secundario);
+}

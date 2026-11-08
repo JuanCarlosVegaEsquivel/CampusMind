@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Resumen y estadísticas - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/estadisticas.css" />
+  </head>
+  <body data-pagina="Resumen y estadísticas">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">administración</span>
+      </div>
+
+      <nav class="menu" aria-label="Módulo administrador">
+        <a
+          href="../estadisticas/estadisticas.html"
+          class="menu-item activo"
+          aria-current="page"
+        >
+          Resumen y estadísticas
+        </a>
+        <a href="../usuarios/usuarios.html" class="menu-item">Usuarios</a>
+        <a href="../profesionales/profesionales.html" class="menu-item">
+          Profesionales
+        </a>
+        <a href="../recursos/recursos.html" class="menu-item">
+          Recursos de autocuidado
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a
+          href="../../compartido/cambiar-contrasena/cambiar-contrasena.html?rol=admin"
+          class="menu-item"
+        >
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        class="buscar"
+        placeholder="Buscar en la plataforma"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span class="inicial">C</span>
+        <span>
+          <span class="persona-nombre">Carolina Jiménez</span>
+          <br />
+          <span class="persona-rol">Administradora</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>Si alguien está en riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <section class="titulo-pagina">
+        <div class="saludo">
+          <p class="fecha">Semana 10 del cuatrimestre</p>
+          <h1>Resumen y estadísticas</h1>
+          <p class="resumen">
+            Esta semana hubo <strong>1 284 registros de ánimo</strong> y
+            <strong>63 citas</strong>. El ánimo promedio bajó por segunda vez en
+            el cuatrimestre, en plena época de parciales.
+          </p>
+          <p class="contexto">
+            <span class="sello neutro">Datos anónimos</span>
+            Ninguna estadística muestra a un estudiante en particular.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: GRÁFICOS SEMANALES -->
+      <div class="columnas mitades margen-abajo">
+        <article class="panel">
+          <div class="panel-titulo">
+            <h2>Ánimo promedio por semana</h2>
+            <span class="nota">escala de 1 a 5</span>
+          </div>
+          <div id="graficoAnimo" class="grafico"></div>
+          <div id="etiquetasAnimo" class="etiquetas"></div>
+          <div class="leyenda">
+            <span>Semana normal</span>
+            <span class="marcada">Semana de parciales</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-titulo">
+            <h2>Citas por semana</h2>
+            <span class="nota">atendidas</span>
+          </div>
+          <div id="graficoCitas" class="grafico"></div>
+          <div id="etiquetasCitas" class="etiquetas"></div>
+          <div class="leyenda">
+            <span>Semana normal</span>
+            <span class="marcada">Semana de parciales</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- SECCIÓN: RANKINGS -->
+      <div class="columnas mitades">
+        <article class="panel">
+          <div class="panel-titulo">
+            <h2>Recursos más consultados</h2>
+            <span class="nota">este mes</span>
+          </div>
+          <ul id="rankingRecursos" class="ranking"></ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-titulo">
+            <h2>Carga de los profesionales</h2>
+            <span class="nota">citas esta semana, de 30 posibles</span>
+          </div>
+          <ul id="rankingCarga" class="ranking"></ul>
+          <p class="privado">
+            Valeria Solano está cerca de su límite. Se podrían asignar las
+            nuevas solicitudes a Esteban o Laura.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/estadisticas.js" defer></script>
+  </body>
+</html>

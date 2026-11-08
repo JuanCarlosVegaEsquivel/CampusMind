@@ -1,0 +1,109 @@
+/* ==================== PROFESIONAL: DETALLE DEL ESTUDIANTE ==================== */
+
+.ficha {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ficha h1 {
+  margin-bottom: 4px;
+}
+
+.ficha .inicial {
+  width: 64px;
+  height: 64px;
+  font-size: 26px;
+}
+
+.permisos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 28px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+}
+
+.dato {
+  padding: 14px 20px;
+  border-left: 1px solid var(--borde-suave);
+}
+
+.dato:first-child {
+  border-left: 0;
+}
+
+.dato span {
+  display: block;
+  font-size: 12px;
+  color: var(--texto-secundario);
+}
+
+.dato strong {
+  font-size: 15px;
+}
+
+.nota-grafico {
+  margin-top: 14px;
+}
+
+/* Próximas fechas académicas */
+.eventos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eventos li {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-top: 1px solid var(--borde-suave);
+  font-size: 14px;
+}
+
+.eventos li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.eventos time {
+  color: var(--texto-secundario);
+}
+
+/* Notas de seguimiento */
+.lista-notas {
+  margin-top: 10px;
+}
+
+.nota-seguimiento {
+  padding: 16px 0;
+  border-top: 1px solid var(--borde-suave);
+}
+
+.nota-cabeza {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--texto-secundario);
+}
+
+.nota-cabeza strong {
+  color: var(--texto);
+}
+
+.nota-texto {
+  font-size: 14px;
+}

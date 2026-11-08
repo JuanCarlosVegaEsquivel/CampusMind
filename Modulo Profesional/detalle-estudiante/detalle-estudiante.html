@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Detalle del estudiante - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/detalle-estudiante.css" />
+  </head>
+  <body data-pagina="Detalle del estudiante">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">espacio profesional</span>
+      </div>
+
+      <nav class="menu" aria-label="Módulo profesional">
+        <a href="../jornada/jornada.html" class="menu-item">Mi jornada</a>
+        <a href="../agenda/agenda.html" class="menu-item">
+          Agenda de citas <span class="contador">3</span>
+        </a>
+        <a href="../seguimiento/seguimiento.html" class="menu-item activo">
+          Estudiantes en seguimiento
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a
+          href="../../compartido/cambiar-contrasena/cambiar-contrasena.html"
+          class="menu-item"
+        >
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        class="buscar"
+        placeholder="Buscar estudiante o cita"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span class="inicial">V</span>
+        <span>
+          <span class="persona-nombre">Valeria Solano</span>
+          <br />
+          <span class="persona-rol">Psicóloga</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>Si alguien está en riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <!-- SECCIÓN: FICHA DEL ESTUDIANTE -->
+      <section class="titulo-pagina">
+        <div class="ficha">
+          <span class="inicial">S</span>
+          <div>
+            <h1>Sol</h1>
+            <div class="permisos">
+              <span class="td-gris">Le comparte:</span>
+              <span class="sello">Registro de ánimo</span>
+              <span class="sello">Calendario académico</span>
+              <span class="td-gris">· No comparte sus notas personales</span>
+            </div>
+          </div>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn btn-primario sin-datos">
+            Agendar cita
+          </button>
+        </div>
+      </section>
+
+      <div class="datos">
+        <div class="dato">
+          <span>Carrera</span><strong>Ingeniería en Sistemas</strong>
+        </div>
+        <div class="dato">
+          <span>En seguimiento desde</span><strong>2 de setiembre</strong>
+        </div>
+        <div class="dato">
+          <span>Sesiones</span><strong>6, la última hoy</strong>
+        </div>
+        <div class="dato">
+          <span>Próxima cita</span><strong>mié 11 nov · 11:00</strong>
+        </div>
+      </div>
+
+      <div class="columnas">
+        <div class="pila">
+          <!-- SECCIÓN: GRÁFICO DE ÁNIMO -->
+          <article class="panel">
+            <div class="panel-titulo">
+              <h2>Ánimo de las últimas dos semanas</h2>
+              <span class="nota">27 oct – 9 nov</span>
+            </div>
+            <div id="graficoSol" class="grafico"></div>
+            <div id="etiquetasSol" class="etiquetas"></div>
+            <div class="leyenda">
+              <span>Registro diario (1 a 5)</span>
+              <span class="marcada">Día con evaluación</span>
+            </div>
+            <p class="animo-lectura alerta nota-grafico">
+              Bajó tres días seguidos, justo después del parcial del 5 de
+              noviembre.
+            </p>
+          </article>
+
+          <!-- SECCIÓN: CALENDARIO ACADÉMICO -->
+          <article class="panel">
+            <div class="panel-titulo">
+              <h2>Próximas fechas académicas</h2>
+              <span class="nota">de su calendario</span>
+            </div>
+            <ul class="eventos">
+              <li>
+                <time>jue 12 nov</time>
+                <span>Parcial de Estructuras de Datos</span>
+                <span class="sello calido">Examen</span>
+              </li>
+              <li>
+                <time>lun 16 nov</time>
+                <span>Entrega del proyecto de Ambiente Web</span>
+                <span class="sello ambar">Entrega</span>
+              </li>
+              <li>
+                <time>vie 20 nov</time>
+                <span>Parcial de Probabilidad</span>
+                <span class="sello calido">Examen</span>
+              </li>
+              <li>
+                <time>mar 1 dic</time>
+                <span>Examen final de Cálculo II</span>
+                <span class="sello calido">Examen</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- SECCIÓN: NOTAS DE SEGUIMIENTO -->
+        <article class="panel">
+          <div class="panel-titulo">
+            <h2>Notas de seguimiento</h2>
+            <span class="nota">solo usted las ve</span>
+          </div>
+
+          <form id="formNota" class="formulario" novalidate>
+            <div class="grupo-formulario">
+              <label for="notaTexto">Nota de la sesión de hoy</label>
+              <textarea
+                id="notaTexto"
+                name="texto"
+                class="campo"
+                placeholder="Qué se trabajó, acuerdos y próximos pasos"
+              ></textarea>
+            </div>
+
+            <p id="mensajeNota" class="mensaje"></p>
+
+            <div class="acciones">
+              <button type="submit" class="btn btn-primario">Guardar nota</button>
+            </div>
+          </form>
+
+          <div id="listaNotas" class="lista-notas"></div>
+        </article>
+      </div>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/detalle-estudiante.js" defer></script>
+  </body>
+</html>

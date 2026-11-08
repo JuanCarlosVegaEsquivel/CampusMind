@@ -1,0 +1,57 @@
+/* ==================== COMPARTIDA: CAMBIAR CONTRASEÑA ==================== */
+
+.columnas.contrasena {
+  grid-template-columns: 520px 340px;
+  justify-content: start;
+}
+
+.campo-con-boton {
+  position: relative;
+}
+
+.campo-con-boton .campo {
+  padding-right: 82px;
+}
+
+.campo-con-boton button {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+}
+
+.requisitos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  list-style: none;
+}
+
+.requisitos li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--texto-secundario);
+}
+
+.requisitos li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--borde);
+  border-radius: 3px;
+}
+
+.requisitos li.cumple {
+  font-weight: 600;
+  color: var(--primario);
+}
+
+.requisitos li.cumple::before {
+  border-color: var(--primario);
+  background: var(--primario);
+}

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Agenda de citas - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/agenda.css" />
+  </head>
+  <body data-pagina="Agenda de citas">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">espacio profesional</span>
+      </div>
+
+      <nav class="menu" aria-label="Módulo profesional">
+        <a href="../jornada/jornada.html" class="menu-item">Mi jornada</a>
+        <a
+          href="../agenda/agenda.html"
+          class="menu-item activo"
+          aria-current="page"
+        >
+          Agenda de citas <span class="contador contador-menu">3</span>
+        </a>
+        <a href="../seguimiento/seguimiento.html" class="menu-item">
+          Estudiantes en seguimiento
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a
+          href="../../compartido/cambiar-contrasena/cambiar-contrasena.html"
+          class="menu-item"
+        >
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        class="buscar"
+        placeholder="Buscar estudiante o cita"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span class="inicial">V</span>
+        <span>
+          <span class="persona-nombre">Valeria Solano</span>
+          <br />
+          <span class="persona-rol">Psicóloga</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>
+          Si alguien está en riesgo inmediato, llame al <strong>911</strong>.
+        </p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <section class="titulo-pagina">
+        <div class="saludo">
+          <p class="fecha">Semana 10 del cuatrimestre</p>
+          <h1>Agenda de citas</h1>
+          <p class="resumen">
+            Esta semana tiene <strong>25 citas</strong> y
+            <strong class="contador-solicitudes">3 solicitudes</strong> por
+            responder.
+          </p>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn btn-secundario sin-datos">
+            Bloquear un horario
+          </button>
+          <button type="button" class="btn btn-primario sin-datos">
+            Agendar cita
+          </button>
+        </div>
+      </section>
+
+      <div class="columnas angosta">
+        <!-- SECCIÓN: CALENDARIO DE LA SEMANA -->
+        <article class="panel">
+          <div class="agenda-controles">
+            <h2>9 al 13 de noviembre</h2>
+            <button type="button" class="btn btn-secundario sin-datos">
+              ← Semana anterior
+            </button>
+            <button type="button" class="btn btn-secundario sin-datos">
+              Semana siguiente →
+            </button>
+          </div>
+
+          <div id="agendaSemana" class="agenda"></div>
+
+          <div class="leyenda-estados">
+            <span><i class="confirmada"></i>Confirmada</span>
+            <span><i class="en-curso"></i>En curso</span>
+            <span><i class="atendida"></i>Atendida</span>
+            <span><i class="pendiente"></i>Solicitud por responder</span>
+            <span><i class="reprogramar"></i>Pide reprogramar</span>
+          </div>
+        </article>
+
+        <div class="pila">
+          <!-- SECCIÓN: SOLICITUDES POR RESPONDER -->
+          <article class="panel">
+            <div class="panel-titulo">
+              <h2>Por responder</h2>
+              <span class="nota contador-solicitudes">3 solicitudes</span>
+            </div>
+            <div id="listaSolicitudes"></div>
+          </article>
+
+          <!-- SECCIÓN: HORARIO DE ATENCIÓN -->
+          <article class="panel">
+            <div class="panel-titulo">
+              <h2>Su horario</h2>
+              <button type="button" class="btn-texto sin-datos">Cambiar</button>
+            </div>
+            <ul class="horario">
+              <li>Lunes a viernes <span>8:00 – 16:00</span></li>
+              <li>Almuerzo <span>12:00 – 13:00</span></li>
+              <li>Duración de cada cita <span>45 minutos</span></li>
+              <li>Modalidad <span>Presencial y virtual</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/agenda.js" defer></script>
+  </body>
+</html>

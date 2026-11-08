@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Cambiar contraseña - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/cambiar-contrasena.css" />
+  </head>
+  <body data-pagina="Cambiar contraseña">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span id="marcaRol" class="marca-rol">espacio profesional</span>
+      </div>
+
+      <nav id="menuProfesional" class="menu" aria-label="Módulo profesional">
+        <a href="../../Modulo Profesional/jornada/jornada.html" class="menu-item">
+          Mi jornada
+        </a>
+        <a href="../../Modulo Profesional/agenda/agenda.html" class="menu-item">
+          Agenda de citas <span class="contador">3</span>
+        </a>
+        <a
+          href="../../Modulo Profesional/seguimiento/seguimiento.html"
+          class="menu-item"
+        >
+          Estudiantes en seguimiento
+        </a>
+      </nav>
+
+      <nav id="menuAdmin" class="menu d-none" aria-label="Módulo administrador">
+        <a
+          href="../../Modulo Administrador/estadisticas/estadisticas.html"
+          class="menu-item"
+        >
+          Resumen y estadísticas
+        </a>
+        <a href="../../Modulo Administrador/usuarios/usuarios.html" class="menu-item">
+          Usuarios
+        </a>
+        <a
+          href="../../Modulo Administrador/profesionales/profesionales.html"
+          class="menu-item"
+        >
+          Profesionales
+        </a>
+        <a href="../../Modulo Administrador/recursos/recursos.html" class="menu-item">
+          Recursos de autocuidado
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a href="#" class="menu-item activo" aria-current="page">
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        id="buscarGeneral"
+        class="buscar"
+        placeholder="Buscar estudiante o cita"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span id="personaInicial" class="inicial">V</span>
+        <span>
+          <span id="personaNombre" class="persona-nombre">Valeria Solano</span>
+          <br />
+          <span id="personaRol" class="persona-rol">Psicóloga</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>Si alguien está en riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <section class="titulo-pagina">
+        <div class="saludo">
+          <p class="fecha">Mi cuenta</p>
+          <h1>Cambiar contraseña</h1>
+          <p class="resumen">Por seguridad, le pediremos su contraseña actual.</p>
+        </div>
+      </section>
+
+      <div class="columnas contrasena">
+        <!-- SECCIÓN: FORMULARIO -->
+        <article class="panel">
+          <form id="formContrasena" class="formulario" novalidate>
+            <div class="grupo-formulario">
+              <label for="claveActual">Contraseña actual</label>
+              <div class="campo-con-boton">
+                <input
+                  type="password"
+                  id="claveActual"
+                  name="actual"
+                  class="campo"
+                  autocomplete="current-password"
+                />
+                <button
+                  type="button"
+                  class="btn-texto btn-mostrar"
+                  data-campo="claveActual"
+                >
+                  Mostrar
+                </button>
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="claveNueva">Contraseña nueva</label>
+              <div class="campo-con-boton">
+                <input
+                  type="password"
+                  id="claveNueva"
+                  name="nueva"
+                  class="campo"
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="btn-texto btn-mostrar"
+                  data-campo="claveNueva"
+                >
+                  Mostrar
+                </button>
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="claveConfirmar">Repita la contraseña nueva</label>
+              <div class="campo-con-boton">
+                <input
+                  type="password"
+                  id="claveConfirmar"
+                  name="confirmar"
+                  class="campo"
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="btn-texto btn-mostrar"
+                  data-campo="claveConfirmar"
+                >
+                  Mostrar
+                </button>
+              </div>
+            </div>
+
+            <p id="mensajeContrasena" class="mensaje"></p>
+
+            <div class="acciones">
+              <button type="submit" class="btn btn-primario">
+                Guardar contraseña
+              </button>
+              <button type="reset" class="btn btn-secundario">Cancelar</button>
+            </div>
+          </form>
+        </article>
+
+        <!-- SECCIÓN: REQUISITOS -->
+        <article class="panel">
+          <div class="panel-titulo">
+            <h2>La contraseña nueva debe tener</h2>
+          </div>
+          <ul class="requisitos">
+            <li data-requisito="largo">Al menos 8 caracteres</li>
+            <li data-requisito="mayuscula">Una letra mayúscula</li>
+            <li data-requisito="numero">Un número</li>
+            <li data-requisito="distinta">Ser distinta de la actual</li>
+            <li data-requisito="iguales">Coincidir en los dos campos</li>
+          </ul>
+          <p class="privado">
+            Al cambiarla, se cerrará su sesión en los otros dispositivos.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/cambiar-contrasena.js" defer></script>
+  </body>
+</html>

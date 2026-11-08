@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Mi jornada - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/jornada.css" />
+  </head>
+  <body data-pagina="Mi jornada">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">espacio profesional</span>
+      </div>
+
+      <nav class="menu" aria-label="Módulo profesional">
+        <a href="../jornada/jornada.html" class="menu-item activo" aria-current="page">
+          Mi jornada
+        </a>
+        <a href="../agenda/agenda.html" class="menu-item">
+          Agenda de citas <span class="contador contador-menu">3</span>
+        </a>
+        <a href="../seguimiento/seguimiento.html" class="menu-item">
+          Estudiantes en seguimiento
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a
+          href="../../compartido/cambiar-contrasena/cambiar-contrasena.html"
+          class="menu-item"
+        >
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        class="buscar"
+        placeholder="Buscar estudiante o cita"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span class="inicial">V</span>
+        <span>
+          <span class="persona-nombre">Valeria Solano</span>
+          <br />
+          <span class="persona-rol">Psicóloga</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>Si alguien está en riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <!-- SECCIÓN: SALUDO Y SEMANA -->
+      <section class="titulo-pagina">
+        <div class="saludo">
+          <p class="fecha">Lunes 9 de noviembre</p>
+          <h1>Buenos días, Valeria.</h1>
+          <p class="resumen">
+            Hoy tiene <a href="../agenda/agenda.html">5 sesiones</a>,
+            <a href="../agenda/agenda.html">3 solicitudes</a> esperando
+            respuesta y
+            <a href="../seguimiento/seguimiento.html">2 estudiantes</a> que le
+            compartieron registros nuevos.
+          </p>
+          <p class="contexto">
+            <span class="sello ambar">Semana 10</span>
+            Temporada de parciales: es normal que lleguen más solicitudes que de
+            costumbre.
+          </p>
+        </div>
+
+        <div>
+          <p class="semana-titulo">Su semana</p>
+          <div class="semana">
+            <div class="dia hoy">
+              <span class="dia-nombre">lun</span>
+              <span class="dia-numero">9</span>
+              <span class="dia-carga">5 citas</span>
+            </div>
+            <div class="dia">
+              <span class="dia-nombre">mar</span>
+              <span class="dia-numero">10</span>
+              <span class="dia-carga">4 citas</span>
+            </div>
+            <div class="dia parciales">
+              <span class="dia-nombre">mié</span>
+              <span class="dia-numero">11</span>
+              <span class="dia-carga">6 citas</span>
+              <span class="dia-marca">parciales</span>
+            </div>
+            <div class="dia parciales">
+              <span class="dia-nombre">jue</span>
+              <span class="dia-numero">12</span>
+              <span class="dia-carga">7 citas</span>
+              <span class="dia-marca">parciales</span>
+            </div>
+            <div class="dia">
+              <span class="dia-nombre">vie</span>
+              <span class="dia-numero">13</span>
+              <span class="dia-carga">3 citas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="columnas">
+        <!-- SECCIÓN: LA JORNADA DE HOY -->
+        <article class="panel cuaderno">
+          <div class="panel-titulo">
+            <h2>La jornada de hoy</h2>
+            <a href="../agenda/agenda.html" class="enlace">Ver agenda completa →</a>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">8:00</span>
+            <div class="sesion atendida">
+              <div>
+                <p class="sesion-nombre">M.R.V.</p>
+                <p class="sesion-dato">8:00 – 8:45</p>
+              </div>
+              <div>
+                <p class="sesion-motivo">Seguimiento de ansiedad</p>
+                <p class="sesion-dato">Presencial, consultorio 2</p>
+              </div>
+              <div class="sesion-acciones">
+                <span class="sello neutro">Atendida</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">9:00</span>
+            <div class="sesion atendida">
+              <div>
+                <p class="sesion-nombre">
+                  Sol <span class="td-sub">(seudónimo)</span>
+                </p>
+                <p class="sesion-dato">9:00 – 9:45</p>
+              </div>
+              <div>
+                <p class="sesion-motivo">Dificultad para dormir</p>
+                <p class="sesion-dato">Virtual</p>
+              </div>
+              <div class="sesion-acciones">
+                <span class="sello calido">Falta la nota</span>
+                <a
+                  href="../detalle-estudiante/detalle-estudiante.html"
+                  class="btn-texto"
+                >
+                  Escribir nota
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">10:00</span>
+            <div class="sesion en-curso">
+              <div>
+                <p class="sesion-nombre">K.G.M.</p>
+                <p class="sesion-dato">10:00 – 10:45</p>
+              </div>
+              <div>
+                <p class="sesion-motivo">Primera sesión</p>
+                <p class="sesion-dato">Virtual</p>
+              </div>
+              <div class="sesion-acciones">
+                <span class="sello">En curso</span>
+                <a
+                  href="../detalle-estudiante/detalle-estudiante.html"
+                  class="btn-texto"
+                >
+                  Abrir notas
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">11:00</span>
+            <span class="hora-libre">Espacio libre</span>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">12:00</span>
+            <span class="hora-libre">Almuerzo</span>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">13:30</span>
+            <div class="sesion">
+              <div>
+                <p class="sesion-nombre">J.P.H.</p>
+                <p class="sesion-dato">13:30 – 14:15</p>
+              </div>
+              <div>
+                <p class="sesion-motivo">Estrés por entregas finales</p>
+                <p class="sesion-dato">Presencial, consultorio 1</p>
+              </div>
+              <div class="sesion-acciones">
+                <a
+                  href="../detalle-estudiante/detalle-estudiante.html"
+                  class="btn-texto"
+                >
+                  Ver lo compartido
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">15:00</span>
+            <div class="sesion">
+              <div>
+                <p class="sesion-nombre">A.C.S.</p>
+                <p class="sesion-dato">15:00 – 15:45</p>
+              </div>
+              <div>
+                <p class="sesion-motivo">Orientación vocacional</p>
+                <p class="sesion-dato">Virtual</p>
+              </div>
+              <div class="sesion-acciones">
+                <span class="sello neutro">Primera vez</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hora">
+            <span class="hora-etiqueta">16:00</span>
+            <span class="hora-libre">Fin de la jornada</span>
+          </div>
+        </article>
+
+        <div class="pila">
+          <!-- SECCIÓN: SOLICITUDES QUE ESPERAN RESPUESTA -->
+          <article class="panel">
+            <div class="panel-titulo">
+              <h2>Esperan respuesta</h2>
+              <span class="nota contador-solicitudes">3 solicitudes</span>
+            </div>
+            <div id="listaSolicitudes"></div>
+          </article>
+
+          <!-- SECCIÓN: LO QUE LE COMPARTIERON -->
+          <article class="panel">
+            <div class="panel-titulo">
+              <h2>Le compartieron</h2>
+              <span class="nota">últimos 7 días</span>
+            </div>
+
+            <div class="compartido">
+              <div class="compartido-cabeza">
+                <strong>Sol</strong>
+                <a
+                  href="../detalle-estudiante/detalle-estudiante.html"
+                  class="enlace"
+                >
+                  Ver detalle
+                </a>
+              </div>
+              <div
+                class="animo grande"
+                aria-label="Ánimo de los últimos 7 días: bien, bien, regular, regular, bajo, bajo, muy bajo"
+              >
+                <span class="a4"></span>
+                <span class="a4"></span>
+                <span class="a3"></span>
+                <span class="a3"></span>
+                <span class="a2"></span>
+                <span class="a2"></span>
+                <span class="a1"></span>
+              </div>
+              <p class="animo-lectura alerta">
+                Su ánimo viene bajando hace 3 días.
+              </p>
+            </div>
+
+            <div class="compartido">
+              <div class="compartido-cabeza">
+                <strong>M.R.V.</strong>
+                <a
+                  href="../detalle-estudiante/detalle-estudiante.html"
+                  class="enlace"
+                >
+                  Ver detalle
+                </a>
+              </div>
+              <div
+                class="animo grande"
+                aria-label="Ánimo de los últimos 7 días: regular, regular, bien, bien, bien, muy bien, bien"
+              >
+                <span class="a3"></span>
+                <span class="a3"></span>
+                <span class="a4"></span>
+                <span class="a4"></span>
+                <span class="a4"></span>
+                <span class="a5"></span>
+                <span class="a4"></span>
+              </div>
+              <p class="animo-lectura">Estable desde la última sesión.</p>
+            </div>
+
+            <p class="privado">
+              Solo ve lo que cada estudiante decidió compartir con usted.
+            </p>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/jornada.js" defer></script>
+  </body>
+</html>

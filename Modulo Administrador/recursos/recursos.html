@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Recursos de autocuidado - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="css/recursos.css" />
+  </head>
+  <body data-pagina="Recursos de autocuidado">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">administración</span>
+      </div>
+
+      <nav class="menu" aria-label="Módulo administrador">
+        <a href="../estadisticas/estadisticas.html" class="menu-item">
+          Resumen y estadísticas
+        </a>
+        <a href="../usuarios/usuarios.html" class="menu-item">Usuarios</a>
+        <a href="../profesionales/profesionales.html" class="menu-item">
+          Profesionales
+        </a>
+        <a
+          href="../recursos/recursos.html"
+          class="menu-item activo"
+          aria-current="page"
+        >
+          Recursos de autocuidado
+        </a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="#" class="menu-item otra-parte">Mi perfil</a>
+        <a
+          href="../../compartido/cambiar-contrasena/cambiar-contrasena.html?rol=admin"
+          class="menu-item"
+        >
+          Cambiar contraseña
+        </a>
+        <a href="#" class="menu-item otra-parte">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: BÚSQUEDA, AYUDA EN CRISIS Y PERSONA -->
+    <div class="barra-superior">
+      <input
+        type="search"
+        class="buscar"
+        placeholder="Buscar en la plataforma"
+        aria-label="Buscar"
+      />
+
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div class="persona">
+        <span class="inicial">C</span>
+        <span>
+          <span class="persona-nombre">Carolina Jiménez</span>
+          <br />
+          <span class="persona-rol">Administradora</span>
+        </span>
+      </div>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h3>Atención inmediata</h3>
+        <p>Si alguien está en riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Aquí irán las líneas de apoyo y el protocolo de la universidad.</p>
+      </div>
+    </div>
+
+    <main class="contenedor">
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secundario btn-volver d-none"
+      ></button>
+
+      <section class="titulo-pagina">
+        <div class="saludo">
+          <p class="fecha">Lunes 9 de noviembre</p>
+          <h1>Recursos de autocuidado</h1>
+          <p class="resumen">
+            La biblioteca tiene <strong>38 recursos publicados</strong> y
+            <strong>4 borradores</strong>.
+          </p>
+        </div>
+      </section>
+
+      <div class="columnas con-formulario">
+        <!-- SECCIÓN: LISTADO DE RECURSOS -->
+        <article class="panel">
+          <div class="encabezado-seccion">
+            <div id="filtrosRecursos" class="filtros">
+              <button type="button" class="btn-filtro activo" data-filtro="todas">
+                Todos
+              </button>
+              <button type="button" class="btn-filtro" data-filtro="respiracion">
+                Respiración
+              </button>
+              <button type="button" class="btn-filtro" data-filtro="estres">
+                Manejo del estrés
+              </button>
+              <button type="button" class="btn-filtro" data-filtro="sueno">
+                Sueño
+              </button>
+              <button type="button" class="btn-filtro" data-filtro="tiempo">
+                Organización del tiempo
+              </button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Recurso</th>
+                <th scope="col">Categoría y formato</th>
+                <th scope="col">Consultas</th>
+                <th scope="col">Estado</th>
+                <th scope="col" class="celda-acciones"></th>
+              </tr>
+            </thead>
+            <tbody id="recursosBody"></tbody>
+          </table>
+          <p id="recursosVacio" class="estado-vacio d-none">
+            No hay recursos en esta categoría.
+          </p>
+
+          <div class="pie-tabla">
+            <span id="recursosConteo"></span>
+            <div class="paginas">
+              <button type="button" class="pagina actual">1</button>
+              <button type="button" class="pagina sin-datos">2</button>
+              <button type="button" class="pagina sin-datos">3</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SECCIÓN: FORMULARIO NUEVO RECURSO -->
+        <article class="panel">
+          <div class="panel-titulo"><h2>Nuevo recurso</h2></div>
+
+          <form id="formRecurso" class="formulario" novalidate>
+            <div class="grupo-formulario">
+              <label for="recursoTitulo">Título</label>
+              <input
+                type="text"
+                id="recursoTitulo"
+                name="titulo"
+                class="campo"
+                placeholder="Ej: Respiración cuadrada"
+              />
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="recursoCategoria">Categoría</label>
+              <select id="recursoCategoria" name="categoria" class="campo">
+                <option value="">Seleccione una categoría</option>
+                <option value="respiracion">Respiración</option>
+                <option value="estres">Manejo del estrés</option>
+                <option value="sueno">Sueño</option>
+                <option value="tiempo">Organización del tiempo</option>
+              </select>
+            </div>
+
+            <div class="fila-campos">
+              <div class="grupo-formulario">
+                <label for="recursoFormato">Formato</label>
+                <select id="recursoFormato" name="formato" class="campo">
+                  <option value="Artículo">Artículo</option>
+                  <option value="Audio">Audio</option>
+                  <option value="Video">Video</option>
+                  <option value="Ejercicio guiado">Ejercicio guiado</option>
+                </select>
+              </div>
+
+              <div class="grupo-formulario">
+                <label for="recursoDuracion">Duración (min)</label>
+                <input
+                  type="number"
+                  id="recursoDuracion"
+                  name="duracion"
+                  class="campo"
+                  min="1"
+                  max="120"
+                  placeholder="Ej: 5"
+                />
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="recursoDescripcion">Descripción corta</label>
+              <textarea
+                id="recursoDescripcion"
+                name="descripcion"
+                class="campo"
+                placeholder="Para qué sirve, en una frase"
+              ></textarea>
+              <span class="ayuda">
+                Aparece debajo del título en la biblioteca del estudiante.
+              </span>
+            </div>
+
+            <label class="casilla">
+              <input type="checkbox" id="recursoPublicar" name="publicar" />
+              Publicar de inmediato
+            </label>
+
+            <p id="mensajeRecurso" class="mensaje"></p>
+
+            <div class="acciones">
+              <button type="submit" class="btn btn-primario">Guardar recurso</button>
+              <button type="reset" class="btn btn-secundario">Limpiar</button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </main>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="js/recursos.js" defer></script>
+  </body>
+</html>
