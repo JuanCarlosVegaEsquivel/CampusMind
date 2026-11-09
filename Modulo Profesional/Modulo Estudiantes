@@ -1,0 +1,143 @@
+------------------ Modulo Estudiantes------------------------------
+
+<title>Modulo Estudiante</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background-color: #245b80;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: white;
+            padding: 15px;
+            float: left;
+            height: 100vh;
+        }
+
+        .menu a {
+            display: block;
+            padding: 12px;
+            margin: 5px 0;
+            background-color: #dceaf2;
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu a:hover {
+            background-color: #8bbbd4;
+        }
+
+        .contenido {
+            margin-left: 280px;
+            padding: 25px;
+        }
+
+        .seccion {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Modulo Estudiante</h1>
+        <p>Panel de bienestar estudiantil</p>
+    </header>
+
+    <div class="menu">
+        <h3>Menu principal</h3>
+
+        <a href="#panel">Panel principal</a>
+        <a href="#checkin">Check-in</a>
+        <a href="#tendencias">Mis tendencias</a>
+        <a href="#calendario">Calendario académico</a>
+        <a href="#recursos">Recursos de autocuidado</a>
+        <a href="#detalle">Detalle del recurso</a>
+        <a href="#citas">Mis citas</a>
+        <a href="#solicitar">Solicitar/reprogramar cita</a>
+        <a href="#perfil">Mi perfil</a>
+    </div>
+
+    <div class="contenido">
+
+        <div id="panel" class="seccion">
+            <h2>Panel principal</h2>
+            <p>Bienvenido al módulo de estudiante.</p>
+            <p>Aquí puedes consultar tu información y actividades.</p>
+        </div>
+
+        <div id="checkin" class="seccion">
+            <h2>Check-in</h2>
+            <p>¿Cómo te sientes hoy?</p>
+            <p>Feliz | Triste | Estresado</p>
+        </div>
+
+        <div id="tendencias" class="seccion">
+            <h2>Mis tendencias</h2>
+            <p>Aquí puedes consultar tus tendencias de bienestar.</p>
+        </div>
+
+        <div id="calendario" class="seccion">
+            <h2>Calendario académico</h2>
+            <p>Consulta tus fechas y actividades importantes.</p>
+            <input type="date">
+        </div>
+
+        <div id="recursos" class="seccion">
+            <h2>Recursos de autocuidado</h2>
+            <ul>
+                <li>Ejercicios de respiración</li>
+                <li>Descanso adecuado</li>
+                <li>Organización del tiempo</li>
+            </ul>
+        </div>
+
+        <div id="detalle" class="seccion">
+            <h2>Detalle del recurso</h2>
+            <p>Información detallada sobre los recursos de autocuidado.</p>
+        </div>
+
+        <div id="citas" class="seccion">
+            <h2>Mis citas</h2>
+            <p>No tienes citas registradas.</p>
+        </div>
+
+        <div id="solicitar" class="seccion">
+            <h2>Solicitar o reprogramar cita</h2>
+
+            <form>
+                <label>Fecha:</label>
+                <input type="date"><br><br>
+
+                <label>Hora:</label>
+                <input type="time"><br><br>
+
+                <input type="submit" value="Solicitar cita">
+            </form>
+        </div>
+
+        <div id="perfil" class="seccion">
+            <h2>Mi perfil</h2>
+
+            <label>Nombre:</label>
+            <input type="text" placeholder="Escribe tu nombre"><br><br>
+
+            <label>Correo:</label>
+            <input type="email" placeholder="Escribe tu correo">
+        </div>
+
+    </div>
