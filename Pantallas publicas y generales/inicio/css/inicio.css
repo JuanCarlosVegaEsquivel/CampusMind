@@ -1,0 +1,60 @@
+/* ==================== PÚBLICA: INICIO ==================== */
+
+.presentacion {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+  align-items: start;
+  gap: 48px;
+  margin-bottom: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.presentacion h1 {
+  max-width: 720px;
+  margin-bottom: 16px;
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+.presentacion .resumen {
+  max-width: 640px;
+  margin-bottom: 22px;
+}
+
+.acciones-presentacion {
+  margin-bottom: 4px;
+}
+
+.nota-crisis {
+  border-color: var(--peligro);
+}
+
+.nota-crisis .panel-titulo h2 {
+  color: var(--peligro);
+}
+
+.nota-crisis p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.columnas-inicio {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+}
+
+.rol-item {
+  padding: 12px 0;
+  border-top: 1px solid var(--borde-suave);
+  font-size: 14px;
+}
+
+.rol-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.rol-item strong {
+  display: block;
+  margin-bottom: 2px;
+}

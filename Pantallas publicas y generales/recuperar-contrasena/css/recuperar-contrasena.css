@@ -1,0 +1,10 @@
+/* ==================== PÚBLICA: RECUPERAR CONTRASEÑA ==================== */
+
+.formulario-lado {
+  grid-template-columns: 520px 340px;
+  justify-content: start;
+}
+
+.pasos-simples li::before {
+  border-radius: 50%;
+}

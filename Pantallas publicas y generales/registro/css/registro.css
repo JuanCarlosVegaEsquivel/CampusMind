@@ -1,0 +1,29 @@
+/* ==================== PÚBLICA: REGISTRO ==================== */
+
+.formulario-registro {
+  grid-template-columns: 560px 340px;
+  justify-content: start;
+}
+
+.fila-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.aceptar {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.aceptar input {
+  flex-shrink: 0;
+  margin-top: 4px;
+  accent-color: var(--primario);
+}
+
+.aceptar.con-error span {
+  color: var(--peligro-texto);
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280" />
+
+    <title>Página no encontrada - CampusMind</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/publico.css" />
+    <link rel="stylesheet" href="css/error-404.css" />
+  </head>
+  <body data-pagina="Error">
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca-nombre">CampusMind</span>
+        <span class="marca-rol">bienestar estudiantil</span>
+      </div>
+
+      <nav class="menu" aria-label="Menú principal">
+        <a href="../inicio/inicio.html" class="menu-item activo" aria-current="page">Inicio</a>
+        <a href="../ayuda-crisis/ayuda-crisis.html" class="menu-item">Ayuda en crisis</a>
+        <a href="../privacidad-terminos/privacidad-terminos.html" class="menu-item">Privacidad y términos</a>
+      </nav>
+
+      <nav class="menu menu-cuenta" aria-label="Mi cuenta">
+        <a href="../iniciar-sesion/iniciar-sesion.html" class="menu-item">Iniciar sesión</a>
+        <a href="../registro/registro.html" class="menu-item">Registrarse</a>
+      </nav>
+    </header>
+
+    <!-- BARRA SUPERIOR: AYUDA EN CRISIS -->
+    <div class="barra-superior">
+      <button
+        type="button"
+        id="btnCrisis"
+        class="btn-crisis"
+        aria-expanded="false"
+        aria-controls="panelCrisis"
+      >
+        Ayuda en crisis
+      </button>
+
+      <div id="panelCrisis" class="panel-crisis d-none">
+        <h2>Atención inmediata</h2>
+        <p>Si hay riesgo inmediato, llame al <strong>911</strong>.</p>
+        <p>Apoyo psicológico: línea <strong>1322</strong>.</p>
+        <p><a href="../ayuda-crisis/ayuda-crisis.html" class="enlace">Ver todas las líneas de apoyo</a></p>
+      </div>
+    </div>
+
+
+    <main class="contenedor">
+      <button type="button" id="btnVolver" class="btn btn-secundario btn-volver d-none"></button>
+
+      <section class="error-caja">
+        <p id="errorCodigo" class="error-codigo">404</p>
+        <h1 id="errorTitulo">Esta página no existe</h1>
+        <p id="errorTexto" class="resumen">
+          Puede que el enlace esté mal escrito o que la página ya no esté disponible.
+        </p>
+        <div class="acciones">
+          <a href="../inicio/inicio.html" class="btn btn-primario">Ir al inicio</a>
+          <a href="../iniciar-sesion/iniciar-sesion.html" class="btn btn-secundario">Iniciar sesión</a>
+        </div>
+        <p class="privado">
+          Esta misma pantalla muestra el aviso de acceso denegado cuando se abre con
+          <code>error-404.html?tipo=denegado</code>.
+        </p>
+      </section>
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-publico">
+      <span>CampusMind · SC-502 Ambiente Web · Grupo 1</span>
+      <span class="pie-enlaces">
+        <a href="../privacidad-terminos/privacidad-terminos.html">Privacidad y términos</a>
+        <a href="../ayuda-crisis/ayuda-crisis.html">Ayuda en crisis</a>
+        <a href="../iniciar-sesion/iniciar-sesion.html">Iniciar sesión</a>
+      </span>
+    </footer>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/global.js" defer></script>
+    <script src="../../assets/js/publico.js" defer></script>
+    <script src="js/error-404.js" defer></script>
+  </body>
+</html>

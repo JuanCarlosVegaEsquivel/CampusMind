@@ -1,0 +1,31 @@
+/* ==================== PÚBLICA: ERROR 404 Y ACCESO DENEGADO ==================== */
+
+.error-caja {
+  max-width: 640px;
+  padding: 48px 0;
+}
+
+.error-codigo {
+  margin-bottom: 4px;
+  color: var(--primario);
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.error-codigo.denegado {
+  color: var(--peligro);
+}
+
+.error-caja h1 {
+  margin-bottom: 12px;
+  font-size: 32px;
+}
+
+.error-caja .resumen {
+  margin-bottom: 24px;
+}
+
+code {
+  font-size: 13px;
+}

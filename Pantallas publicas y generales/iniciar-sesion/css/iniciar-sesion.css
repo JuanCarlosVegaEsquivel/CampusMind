@@ -1,0 +1,10 @@
+/* ==================== PÚBLICA: INICIAR SESIÓN ==================== */
+
+.formulario-lado {
+  grid-template-columns: 520px 340px;
+  justify-content: start;
+}
+
+.acciones-lado {
+  margin-top: 14px;
+}

@@ -1,0 +1,15 @@
+/* ==================== GENERAL: CERRAR SESIÓN ==================== */
+
+.error-caja {
+  max-width: 640px;
+  padding: 48px 0;
+}
+
+.error-caja h1 {
+  margin-bottom: 12px;
+  font-size: 32px;
+}
+
+.error-caja .resumen {
+  margin-bottom: 24px;
+}
